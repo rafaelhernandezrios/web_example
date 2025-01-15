@@ -247,4 +247,3 @@ Para desplegar la aplicación en un servidor como Heroku o PythonAnywhere:
 ## **Conclusión**
 
 Este proyecto sirve como base para aprender los fundamentos del desarrollo web con Flask. Puedes personalizarlo, escalarlo y adaptarlo a tus necesidades para construir aplicaciones web más complejas. ¡Explora, experimenta y diviértete programando!
-"# web_example" 
