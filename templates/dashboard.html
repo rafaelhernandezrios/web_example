@@ -1,0 +1,14 @@
+<!-- templates/dashboard.html -->
+
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>Dashboard de Usuario</h2>
+
+{% if survey %}
+    <h3>Último Perfil Analizado:</h3>
+    <p>{{ survey.profile_analysis }}</p>
+{% else %}
+    <p>Aún no has completado una encuesta.</p>
+{% endif %}
+{% endblock %}

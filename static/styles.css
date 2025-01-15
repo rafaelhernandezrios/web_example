@@ -1,0 +1,55 @@
+/* static/styles.css */
+
+/* Estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo de la barra de navegación */
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+/* Estilo de los enlaces en la barra de navegación */
+nav a {
+    color: #fff;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+/* Estilo del contenedor principal */
+.container {
+    padding: 20px;
+}
+
+/* Estilos para mensajes de alerta */
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+/* Estilos para diferentes categorías de alertas */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+/* Estilo para mensajes de error en formularios */
+.error {
+    color: red;
+    font-size: 0.9em;
+}

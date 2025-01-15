@@ -1,0 +1,40 @@
+<!-- templates/demographics.html -->
+
+{% extends 'base.html' %}
+{% block title %}Datos Demográficos{% endblock %}
+{% block content %}
+<h2>Formulario de Datos Demográficos</h2>
+<form method="POST" action="">
+    {{ form.hidden_tag() }} <!-- Protección CSRF -->
+    
+    <!-- Campo de edad -->
+    <p>
+        {{ form.age.label }}<br>
+        {{ form.age() }}<br>
+        {% for error in form.age.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </p>
+    
+    <!-- Campo de género -->
+    <p>
+        {{ form.gender.label }}<br>
+        {{ form.gender() }}<br>
+        {% for error in form.gender.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </p>
+    
+    <!-- Campo de ubicación -->
+    <p>
+        {{ form.location.label }}<br>
+        {{ form.location(size=64) }}<br>
+        {% for error in form.location.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </p>
+    
+    <!-- Botón de envío -->
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

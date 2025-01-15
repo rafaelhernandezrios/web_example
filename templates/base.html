@@ -1,0 +1,40 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mi Aplicación{% endblock %}</title>
+    <!-- Enlazar el archivo CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="{{ url_for('index') }}">Inicio</a>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('demographics') }}">Encuestas</a>
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('logout') }}">Cerrar Sesión</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Iniciar Sesión</a>
+            <a href="{{ url_for('register') }}">Registrarse</a>
+        {% endif %}
+    </nav>
+    
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Mostrar mensajes flash -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <!-- Contenido específico de cada página -->
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

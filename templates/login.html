@@ -1,0 +1,31 @@
+<!-- templates/login.html -->
+
+{% extends 'base.html' %}
+{% block title %}Iniciar Sesión{% endblock %}
+{% block content %}
+<h2>Iniciar Sesión</h2>
+<form method="POST" action="">
+    {{ form.hidden_tag() }} <!-- Protección CSRF -->
+    
+    <!-- Campo de nombre de usuario -->
+    <p>
+        {{ form.username.label }}<br>
+        {{ form.username(size=32) }}<br>
+        {% for error in form.username.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </p>
+    
+    <!-- Campo de contraseña -->
+    <p>
+        {{ form.password.label }}<br>
+        {{ form.password(size=32) }}<br>
+        {% for error in form.password.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </p>
+    
+    <!-- Botón de envío -->
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

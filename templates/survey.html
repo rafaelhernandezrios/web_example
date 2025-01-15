@@ -1,0 +1,31 @@
+<!-- templates/survey.html -->
+
+{% extends 'base.html' %}
+{% block title %}Encuesta de Habilidades{% endblock %}
+{% block content %}
+<h2>Encuesta de Habilidades</h2>
+<form method="POST" action="">
+    {{ form.hidden_tag() }} <!-- Protección CSRF -->
+    
+    <!-- Campo de habilidades blandas -->
+    <p>
+        {{ form.soft_skills.label }}<br>
+        {{ form.soft_skills(rows=5, cols=50) }}<br>
+        {% for error in form.soft_skills.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </p>
+    
+    <!-- Campo de habilidades duras -->
+    <p>
+        {{ form.hard_skills.label }}<br>
+        {{ form.hard_skills(rows=5, cols=50) }}<br>
+        {% for error in form.hard_skills.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </p>
+    
+    <!-- Botón de envío -->
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
