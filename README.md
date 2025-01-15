@@ -33,8 +33,8 @@ Sigue estos pasos para configurar el proyecto localmente:
    Si estás utilizando Git, clona el repositorio:
 
    ```bash
-   git clone https://github.com/tu-repositorio/proyecto-flask.git
-   cd proyecto-flask
+   git clone https://github.com/rafaelhernandezrios/web_example/
+   cd web_example
    ```
 
 2. **Crear un Entorno Virtual:**
